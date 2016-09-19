@@ -1,0 +1,17 @@
+<div ng-repeat="beer in $ctrl.beer_list">
+  <div ng-controller="BeerCtrl as beerCtrl" class="beer-container panel panel-default">
+    <div class="beer-name panel-heading">{{beer.name}}</div>
+    <div class="beer-panel panel-body">
+      <button type="button" class="btn btn-default" ng-click="beerCtrl.toggle_tasted($index)">
+        <span ng-hide="beer.tasted" class="glyphicon glyphicon-unchecked"></span>
+        <span ng-show="beer.tasted" class="glyphicon glyphicon-check"></span>
+      </button>
+      <button type="button" class="btn" ng-class="beerCtrl.get_like_class('success')" ng-click="beerCtrl.toggle_like()">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      </button>
+      <button type="button" class="btn" ng-class="beerCtrl.get_hate_class('danger')" ng-click="beerCtrl.toggle_hate()">
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+      </button>
+    </div>
+  </div>
+</div>
